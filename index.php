@@ -1,10 +1,14 @@
+<?php
+include 'config/data_register.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CRUD PHP</title>
     <link rel="stylesheet" href="modul/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <script language="Javascript" src="modul/bootstrap-4.3.1-dist/js/bootstrap.min.js"> </script>
     <script src="modul/JQuery/jquery.min.js"></script>
@@ -15,8 +19,7 @@
 </head>
 
 <body>
-    <div class="container">
-        
+    <div class="container"> 
             <table id="dataregister" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                     <tr>
@@ -27,13 +30,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php while ($row = $q->fetch()):
+                    $namadepan = $row['nama_depan'];
+                    $namabelakang = $row['nama_belakang'];
+                    $namalengkap = $namadepan . " " . $namabelakang;
+                    $email = $row['email'];
+                    $username = $row['username'];
+                    ?>
                     <tr>
-                        <td>Intan Nur Fadhila</td>
-                        <td>intan@sttbandung.ac.id</td>
-                        <td>intan16</td>
+                        <td><?php echo $namalengkap;?></td>
+                        <td><?php echo $email;?></td>
+                        <td><?php echo $username;?></td>
                         <td><button type="button" class="btn btn-primary">Edit</button>
                         <button type="button" class="btn btn-danger">Hapus</button> </td>
                     </tr>
+                    <?php endwhile;?>
                 </tbody>
             </table>
     </div>
