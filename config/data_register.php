@@ -2,7 +2,7 @@
 require_once 'koneksi.php';
 
 try{
-$sql = 'SELECT * FROM `data_pendaftar`';
+$sql = 'SELECT * FROM `data_pendaftar` ORDER BY `nama_depan` ASC';
 $q = $database_connection -> query($sql);
 $q->setFetchMode(PDO::FETCH_ASSOC);
 }catch(PDOException $e){
