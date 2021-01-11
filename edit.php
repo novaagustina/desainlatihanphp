@@ -1,19 +1,15 @@
 <?php
+include 'session.php';
+
 $id_register = $_POST["id_reg"];
 $nama_depan = $_POST["namadepan"];
 $nama_belakang = $_POST["namabelakang"];
 $email = $_POST["email"];
 $username = $_POST["username"];
+
+include 'header.php';
 ?>
 
-<html>
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Edit Data Registrasi</title>
-	<link rel="stylesheet" href="modul/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-</head>
 
 <body>
 	<!-- buat class container -->

@@ -1,4 +1,5 @@
 <?php
+include 'session.php';
 $idreg = $_POST["id"];
 require_once 'config/koneksi.php';
 
@@ -35,21 +36,13 @@ foreach ($q as $row) {
         $status = "Operator";
     }else if (is_null($st)){
         $status = "Biodata Lengkap Belum Tersedia! Hubungi user untuk melakukan update data!";
-    }
-    
-    
+    }    
 }
+
+include 'header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD PHP</title>
-    <link rel="stylesheet" href="modul/bootstrap-4.3.1-dist/css/bootstrap.min.css">
 
-</head>
 <body>
 <div class="container">
     <div class="main-body">
@@ -74,7 +67,6 @@ foreach ($q as $row) {
                       <p class="text-secondary mb-1"><?php echo $pekerjaan;?></p>
                       <p class="text-muted font-size-sm"><?php echo $perusahaan;?></p><br/><br/>
                       <a href="<?php echo $photo;?>">Download Foto Profil</a>
-                  
                     </div>
                   </div>
                 </div>
